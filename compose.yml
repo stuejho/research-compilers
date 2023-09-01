@@ -1,0 +1,13 @@
+services:
+  codelab:
+    build: .
+    volumes:
+      - src-volume:/src
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+  data:
+    image: busybox
+    volumes:
+      - src-volume:/src
+volumes:
+  src-volume:
